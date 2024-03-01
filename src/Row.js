@@ -1,20 +1,22 @@
 import React, { useEffect, useState } from 'react'
-import axios from './axios.js';
+import axios from './axios';
 
 
-function Row(props) {
+function Row({title,fetchurl}) {
    const [movies,setMovies]=useState([])
+
    useEffect(()=>{
          async function fetchData(){
-            const request=await
+            const request = await axios.get(fetchurl)
          }
+         fetchData()
 
-   },[movies])
+   },[])
 
 
   return (
     <div>
-      <h2>{props.title}</h2>
+      <h2>{title}</h2>
       
     </div>
   );
