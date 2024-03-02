@@ -1,0 +1,51 @@
+.nav{
+   position: fixed;
+   top: 0;
+   display: flex;
+   justify-content: space-between;
+   width: 100%;
+   padding: 20px;
+   z-index: 1;
+   height: 1.5rem;
+
+   transition-timing-function: ease-in;
+   transition: all 0.5s;
+   
+}
+.nav__black{
+   background-color: black;
+}
+.nav_logo{
+   width: 80px;
+   left: 20 px;
+   object-fit: contain;
+}
+.nav_avatar{
+   width: 30px;
+   object-fit: contain;
+}
+.left_content{
+   display: flex;
+}
+
+.right_content{
+   position :fixed;
+   right: 20px;
+}
+
+.navigator{
+   list-style: none;
+   display: flex;
+   color: white;
+}
+
+.navigator li{
+   font-size: 1rem;
+   font-weight: 600;
+   padding-right: 1.5rem;
+
+}
+
+.active{
+   font-weight: 800;
+}
