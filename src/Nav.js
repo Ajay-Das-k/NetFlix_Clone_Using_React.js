@@ -25,7 +25,7 @@ function Nav() {
     };
   }, []);
 
-  const [break, handleBreak] = useState(false);
+  
 
   return (
     <div className={`nav ${show && "nav__black"}`}>
