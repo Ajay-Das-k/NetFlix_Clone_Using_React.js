@@ -33,3 +33,12 @@ max-height: 200px;
    transform: scale(1.09);
 
 }
+.modal{
+   width: 600px;
+   height: 600px;
+   z-index: 2;
+   position: static;
+}
+.modal_content{
+
+}

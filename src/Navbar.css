@@ -1,0 +1,78 @@
+.nav {
+  position: fixed;
+   top: 0;
+   display: flex;
+   justify-content: space-between;
+   width: 100%;
+   padding: 20px;
+   z-index: 1;
+   height: 1.5rem;
+
+   transition-timing-function: ease-in;
+   transition: all 0.5s;
+
+}
+.nav__black{
+   background-color: black;
+}
+  .container {
+   
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+
+    .left {
+      display: flex;
+      align-items: center;
+
+      img {
+        height: 25px;
+        margin-right: 40px;
+      }
+
+      span {
+        margin-right: 20px;
+        cursor: pointer;
+      }
+    }
+
+    .right {
+      display: flex;
+      align-items: center;
+
+      .icon {
+        margin: 0px 15px;
+        cursor: pointer;
+      }
+
+      img {
+        width: 30px;
+        height: 30px;
+        border-radius: 5px;
+        object-fit: cover;
+        cursor: pointer;
+      }
+
+      .profile {
+        .options {
+          display: none;
+          background-color: var(--main-color);
+          border-radius: 5px;
+        }
+
+        span {
+          padding: 10px;
+          cursor: pointer;
+        }
+
+        &:hover {
+          .options {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+          }
+        }
+      }
+    }
+  }

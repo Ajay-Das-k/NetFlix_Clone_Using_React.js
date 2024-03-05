@@ -11,7 +11,7 @@ const baseUrl="https://image.tmdb.org/t/p/original"
 function Row({ title, fetchUrl,isLargeRow}) {
   const [movies, setMovies] = useState([]);
   const [trailerUrl, setTrailerUrl] = useState("");
-
+  const [showModal, setShowModal] = useState(false);
   useEffect(() => {
     async function fetchData() {
       const request = await axios.get(fetchUrl);
@@ -45,12 +45,17 @@ const handleClick = (movie) => {
         if (url) {
           const urlParams = new URLSearchParams(new URL(url).search);
           setTrailerUrl(urlParams.get("v"));
+          setShowModal(true); 
         } else {
           console.log("No trailer found for this movie");
         }
       })
       .catch((error) => console.log(error));
   }
+};
+const closeModal = () => {
+  setTrailerUrl(""); // Reset trailer URL
+  setShowModal(false); // Hide modal
 };
   return (
     <div className="row">
@@ -68,7 +73,16 @@ const handleClick = (movie) => {
           ></img>
         ))}
       </div>
-      {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
+      {showModal && (
+        <div className="modal">
+          <div className="modal_content">
+            <span className="close" onClick={closeModal}>
+              &times;
+            </span>
+            <YouTube videoId={trailerUrl} opts={opts} />
+          </div>
+        </div>
+      )}
     </div>
   );
 }

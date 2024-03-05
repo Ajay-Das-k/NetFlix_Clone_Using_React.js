@@ -63,8 +63,12 @@ function Nav() {
             />
             <FontAwesomeIcon
               icon={faSortDown}
-              style={{ paddingLeft: "0.5rem" ,paddingBottom:"1rem"}}
+              style={{ paddingLeft: "0.5rem", paddingBottom: "1rem" }}
             />
+            <div className="options">
+              <span>Settings</span>
+              <span>LogOut</span>
+            </div>
           </li>
         </ul>
       </div>
